@@ -8,7 +8,7 @@ interface PageProps {
 
 export default async function PatientViewerPage({ params }: PageProps) {
   const { token } = await params
-  const supabase = await createServiceClient()
+  const supabase = createServiceClient()
 
   // Get patient by content_token
   const { data: patient } = await supabase

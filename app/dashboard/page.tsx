@@ -1,10 +1,12 @@
+export const dynamic = 'force-dynamic'
+
 import { redirect } from 'next/navigation'
 import { createServerSupabaseClient } from '@/lib/supabase/server'
 import { Patient } from '@/lib/supabase/types'
 import { DashboardClient } from './DashboardClient'
 
 export default async function DashboardPage() {
-  const supabase = await createServerSupabaseClient()
+  const supabase = createServerSupabaseClient()
 
   // Check auth
   const { data: { user } } = await supabase.auth.getUser()

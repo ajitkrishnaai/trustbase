@@ -8,7 +8,7 @@ interface RouteContext {
 export async function PATCH(request: NextRequest, context: RouteContext) {
   try {
     const { id } = await context.params
-    const supabase = await createServiceClient()
+    const supabase = createServiceClient()
 
     const { error } = await supabase
       .from('patients')
