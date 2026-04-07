@@ -8,13 +8,16 @@ export function Hero() {
         <div className="grid md:grid-cols-12 gap-12 md:gap-16 items-center">
           <div className="md:col-span-5">
             <h1 className="text-4xl md:text-6xl font-bold text-[var(--dark-slate)] leading-tight tracking-tight mb-6">
-              Your patients no-show because they don't trust the plan. TrustBase changes that.
+              $192,000 — the average annual revenue a 5-provider practice loses to no-shows.
             </h1>
-            <p className="text-xl text-[var(--slate-secondary)] mb-10 max-w-[560px]">
-              Stop losing revenue and time to patient anxiety. Send bite-sized education before every appointment. Build trust. Reduce no-shows.
+            <p className="text-xl text-[var(--slate-secondary)] mb-4 max-w-[560px]">
+              Most of it comes down to trust. We fix that before patients walk in.
+            </p>
+            <p className="text-lg text-[var(--slate-secondary)] mb-10 max-w-[560px]">
+              TrustBase sends personalized, bite-sized education to your patients before every appointment. They arrive informed. They show up.
             </p>
             <div className="flex flex-wrap items-center gap-6">
-              <Link href="/signup">
+              <Link href="/dashboard">
                 <Button className="h-14 px-8 text-lg">Start free trial</Button>
               </Link>
               <a
@@ -26,10 +29,36 @@ export function Hero() {
             </div>
           </div>
           <div className="md:col-span-7 hidden md:block">
-            <div
-              className="aspect-[4/3] rounded-2xl border border-[var(--border-subtle)] bg-[var(--card-bg)] shadow-[var(--shadow-large)] flex items-center justify-center"
-            >
-              <span className="text-6xl">📱</span>
+            {/* Mock patient content card */}
+            <div className="rounded-2xl border border-[var(--border-subtle)] bg-[var(--card-bg)] shadow-[var(--shadow-large)] p-8 max-w-[420px] mx-auto">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-10 h-10 rounded-full bg-[var(--teal-primary)] flex items-center justify-center text-white text-lg font-bold">
+                  T
+                </div>
+                <div>
+                  <div className="text-sm font-semibold text-[var(--dark-slate)]">TrustBase</div>
+                  <div className="text-xs text-[var(--slate-tertiary)]">Patient education</div>
+                </div>
+              </div>
+              <div className="mb-4">
+                <h3 className="text-lg font-bold text-[var(--dark-slate)] mb-2">
+                  What to expect at your cholesterol check-in
+                </h3>
+                <p className="text-sm text-[var(--slate-secondary)] leading-relaxed">
+                  Your provider will review your latest lipid panel and talk through what the numbers mean for your heart health. No surprises — just a clear picture of where you stand.
+                </p>
+              </div>
+              {/* Progress indicator */}
+              <div className="flex items-center gap-3 pt-4 border-t border-[var(--border-subtle)]">
+                <div className="flex gap-1.5">
+                  <div className="w-2 h-2 rounded-full bg-[var(--teal-primary)]" />
+                  <div className="w-2 h-2 rounded-full bg-[var(--teal-primary)]" />
+                  <div className="w-2 h-2 rounded-full bg-[var(--border-medium)]" />
+                  <div className="w-2 h-2 rounded-full bg-[var(--border-medium)]" />
+                  <div className="w-2 h-2 rounded-full bg-[var(--border-medium)]" />
+                </div>
+                <span className="text-xs text-[var(--slate-tertiary)]">2 of 5 complete</span>
+              </div>
             </div>
           </div>
         </div>

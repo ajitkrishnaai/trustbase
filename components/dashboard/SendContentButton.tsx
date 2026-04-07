@@ -23,9 +23,15 @@ export function SendContentButton({ patientId, onSuccess }: SendContentButtonPro
         body: JSON.stringify({ patientId }),
       })
 
+      const data = await response.json()
+
       if (!response.ok) {
-        const data = await response.json()
         throw new Error(data.error || 'Failed to send content')
+      }
+
+      // Open patient content viewer in new tab
+      if (data.viewerUrl) {
+        window.open(data.viewerUrl, '_blank', 'noopener')
       }
 
       onSuccess()

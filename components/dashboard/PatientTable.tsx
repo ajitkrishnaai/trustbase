@@ -3,6 +3,7 @@
 import { Patient } from '@/lib/supabase/types'
 import { StatusBadge } from './StatusBadge'
 import { SendContentButton } from './SendContentButton'
+import { ViewContentButton } from './ViewContentButton'
 
 interface PatientTableProps {
   patients: Patient[]
@@ -83,6 +84,9 @@ export function PatientTable({ patients, onUpdate }: PatientTableProps) {
                   {patient.content_status === 'not_sent' && (
                     <SendContentButton patientId={patient.id} onSuccess={onUpdate} />
                   )}
+                  {(patient.content_status === 'sent' || patient.content_status === 'opened' || patient.content_status === 'completed') && (
+                    <ViewContentButton contentToken={patient.content_token} />
+                  )}
                 </td>
               </tr>
             ))}
@@ -113,6 +117,9 @@ export function PatientTable({ patients, onUpdate }: PatientTableProps) {
             </div>
             {patient.content_status === 'not_sent' && (
               <SendContentButton patientId={patient.id} onSuccess={onUpdate} />
+            )}
+            {(patient.content_status === 'sent' || patient.content_status === 'opened' || patient.content_status === 'completed') && (
+              <ViewContentButton contentToken={patient.content_token} />
             )}
           </div>
         ))}
