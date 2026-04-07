@@ -1,6 +1,9 @@
 import { Resend } from 'resend'
 
-const resend = new Resend(process.env.RESEND_API_KEY!)
+// Lazy instantiation to avoid build errors with placeholder env vars
+function getResend() {
+  return new Resend(process.env.RESEND_API_KEY!)
+}
 
 interface SendContentEmailParams {
   to: string
@@ -15,6 +18,7 @@ export async function sendContentEmail({
   visitType,
   viewerUrl,
 }: SendContentEmailParams) {
+  const resend = getResend()
   await resend.emails.send({
     from: 'TrustBase <noreply@trustbase.ajitkrishna.com>',
     to,

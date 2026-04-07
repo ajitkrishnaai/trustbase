@@ -1,11 +1,14 @@
 import Anthropic from '@anthropic-ai/sdk'
 import { ContentCard } from './supabase/types'
 
-const anthropic = new Anthropic({
-  apiKey: process.env.ANTHROPIC_API_KEY!,
-})
+function getAnthropic() {
+  return new Anthropic({
+    apiKey: process.env.ANTHROPIC_API_KEY!,
+  })
+}
 
 export async function generateContentCards(visitType: string): Promise<ContentCard[]> {
+  const anthropic = getAnthropic()
   const message = await anthropic.messages.create({
     model: 'claude-3-5-sonnet-20241022',
     max_tokens: 1024,
