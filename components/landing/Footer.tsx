@@ -7,7 +7,19 @@ export function Footer() {
           Building trust, one appointment at a time.
         </p>
 
-        <div className="border-t border-white/10 pt-6 mb-6">
+        <div className="border-t border-white/10 pt-6 mb-6 space-y-3">
+          <p className="text-sm text-white/50">
+            This prototype is open source &mdash;{' '}
+            <a
+              href="https://github.com/ajitkrishnaai/trustbase"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[var(--teal-light)] hover:text-[var(--teal-primary)] transition-colors"
+            >
+              fork it and build on it
+            </a>
+            .
+          </p>
           <p className="text-sm text-white/50">
             I help businesses solve real problems quickly and integrate AI where
             it makes sense.{' '}
