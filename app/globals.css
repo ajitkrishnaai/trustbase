@@ -1,7 +1,8 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
-  /* TrustBase Color Tokens */
   --warm-white: #FAFAF7;
   --teal-primary: #0D9488;
   --teal-hover: #0F766E;
@@ -18,21 +19,15 @@
   --shadow-soft: 0 2px 8px rgba(13, 148, 136, 0.08);
   --shadow-medium: 0 4px 16px rgba(13, 148, 136, 0.12);
   --shadow-large: 0 12px 32px rgba(13, 148, 136, 0.16);
-  
-  /* Dashboard specific */
   --status-not-sent: #94A3B8;
   --status-sent: #3B82F6;
   --status-opened: #F59E0B;
   --status-completed: #10B981;
   --hover-row: rgba(132, 169, 140, 0.04);
-  
-  /* Patient viewer specific */
   --progress-bg: rgba(132, 169, 140, 0.15);
   --progress-fill: var(--sage-green);
   --card-shadow: 0 8px 24px rgba(13, 148, 136, 0.12);
   --icon-bg: rgba(132, 169, 140, 0.1);
-  
-  /* Legacy compat */
   --background: var(--warm-bg);
   --foreground: var(--dark-slate);
 }
@@ -49,13 +44,4 @@ body {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-}
-
-@keyframes shimmer {
-  0% {
-    background-position: -200% 0;
-  }
-  100% {
-    background-position: 200% 0;
-  }
 }
