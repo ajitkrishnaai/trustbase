@@ -24,7 +24,9 @@ export function PatientTable({ patients, onUpdate }: PatientTableProps) {
   if (patients.length === 0) {
     return (
       <div className="bg-[var(--card-bg)] border border-[var(--border-subtle)] rounded-lg p-16 text-center shadow-[0_1px_3px_rgba(13,148,136,0.06)]">
-        <div className="text-6xl mb-4">👥</div>
+        <div className="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center text-[var(--teal-primary)]" style={{ background: 'var(--icon-bg, rgba(13,148,136,0.08))' }}>
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /></svg>
+        </div>
         <h3 className="text-xl font-semibold text-[var(--dark-slate)] mb-2">No patients yet</h3>
         <p className="text-base text-[var(--slate-secondary)] max-w-md mx-auto mb-6">
           Add your first patient to start sending personalized education content.

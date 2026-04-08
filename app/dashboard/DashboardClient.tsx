@@ -39,7 +39,7 @@ export function DashboardClient({ providerId, patients, engagementStats }: Dashb
         {engagementStats.total > 0 && (
           <div className="bg-[var(--card-bg)] border border-[var(--border-subtle)] rounded-lg p-5 mb-6 shadow-[0_1px_3px_rgba(13,148,136,0.06)]">
             <div className="flex items-center gap-3">
-              <span className="text-xl">📊</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-[var(--teal-primary)]"><line x1="18" y1="20" x2="18" y2="10" /><line x1="12" y1="20" x2="12" y2="4" /><line x1="6" y1="20" x2="6" y2="14" /></svg>
               <span className="text-base font-medium text-[var(--dark-slate)]">
                 <span className="text-[var(--teal-primary)] font-semibold">
                   {engagementStats.engaged} of {engagementStats.total}
